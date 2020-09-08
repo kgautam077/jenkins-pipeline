@@ -23,11 +23,5 @@ pipeline {
                 echo 'Mvn Tests done'
             }
         }
-        stage('Deliver') {
-            steps {
-                sh 'chmod +x -R ${WORKSPACE}'
-                sh './jenkins/scripts/deliver.sh'
-            }
-        }
     }
 }
