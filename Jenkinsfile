@@ -1,5 +1,5 @@
 pipeline {
-    agent {label 'Node-1'}
+    agent {label 'Stage'}
     stages {
         stage('Build') {
              agent {
@@ -22,12 +22,6 @@ pipeline {
             steps {
                 echo 'Mvn Tests done'
             }
-        }
-        stage('Deliver') {
-            steps {
-                sh 'chmod +x -R ${WORKSPACE}'
-                sh './jenkins/scripts/deliver.sh'
-            }
-        }
+        }        
     }
 }
